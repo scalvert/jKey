@@ -140,10 +140,8 @@
 			'>':190,
 			'/':191,
 			'?':191
-		};
+		}, x = '', y = '', keySplit;
 
-		var x = '';
-		var y = '';
 		if(typeof options == 'function' && typeof callback == 'undefined'){
 			callback = options;
 			options = false;
@@ -151,10 +149,10 @@
 
 		//IE has issues here... so, we "convert" toString() :(
 		if(keyCombo.toString().indexOf(',') > -1){ //If multiple keys are selected
-			var keySplit = keyCombo.match(/[a-zA-Z0-9]+/gi);
+			keySplit = keyCombo.match(/[a-zA-Z0-9]+/gi);
 		}
 		else { //Else just store this single key
-			var keySplit = [keyCombo];
+			keySplit = [keyCombo];
 		}
 		for(x in keySplit){ //For each key in the array...
 			if(!keySplit.hasOwnProperty(x)) { continue; }
